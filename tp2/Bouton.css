@@ -1,0 +1,22 @@
+main {
+  padding: 100px;
+
+}
+
+.Bouton {
+  background-color: grey;
+  display: inline-block;
+  height: 54px;
+
+}
+
+.BtnSnickers {
+  display: block;
+  border: 1px solid blue;
+  padding:20px 40px 10px 10px;
+  color: black;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  transform: translate(-10px,-10px);
+
+}

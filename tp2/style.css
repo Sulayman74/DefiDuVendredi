@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+header {
+  display: flex;
+  justify-content: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+}
+
+
+
+.Cadran {
+  background-image: url('watch_verte.svg');
+  height: 100vh;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+}
+
+.Cadran:after {
+  background: white;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hours {
+  background: rgb(176, 223, 78);
+  height: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 33%;
+  transform-origin: 50% 100%;
+  width:12px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.minutes {
+  background: rgb(248, 249, 244);
+  height: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 12px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.seconds {
+  background: rgb(208, 50, 50);
+  height: 26%;
+  left: 50%;
+  transform:translateX(-50%);
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 80%;
+  width: 7px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  z-index: 1;
+}
+@-webkit-keyframes çaTourne {
+  100% {transform: rotate(360deg); }
+
+}
+@-o-keyframes çaTourne {
+  100% {transform: rotate(360deg); }
+
+}
+@-moz-keyframes çaTourne {
+  100% {transform: rotate(360deg); }
+
+}
+@keyframes çaTourne {
+  100% {transform: rotate(360deg); }
+
+}
+
+.hours-container {
+  animation: çaTourne 43200s infinite linear;
+}
+.minutes-container {
+  animation: çaTourne 3600s infinite linear;
+}
+.seconds-container {
+  animation: çaTourne 60s infinite steps(60);
+}

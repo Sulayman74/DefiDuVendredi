@@ -1,0 +1,237 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  main {
+    // * création des classes pour le javascript class : "active" quand ces classes sont appelées le CSS fait apparaître les éléments voulus.
+    // ! ici les astronautes
+    .astronautes {
+      display: flex;
+      justify-content: space-evenly;
+      width: fit-content;
+      height: fit-content;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      display: none;
+      transition: all 0.3s linear;
+      &.active {
+        position: absolute;
+        top: 40vh;
+        display: flex;
+        animation: goUp 2s ease-out forwards;
+        @keyframes goUp {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(-60%);
+          }
+        }
+      }
+      p {
+        font-size: 100px;
+      }
+    }
+    // ! ici la notification du carburant
+    .notif-carbu-ok {
+      padding: 20px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      position: absolute;
+      transition: all 1s linear;
+      height: 10vh;
+      width: 20%;
+      background-color: green;
+      border-radius: 10px;
+      display: none;
+      text-align: center;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      text-transform: uppercase;
+      &.active {
+        position: absolute;
+        top: 10vh;
+        left: 2vw;
+        font-size: 14px;
+        display: flex;
+      }
+    }
+    // ! ici la notification des passagers
+    .notif-passagers-ok {
+      display: flex;
+      position: absolute;
+      transition: all 1s linear;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 7vh;
+      height: 10vh;
+      width: fit-content;
+      background-color: royalblue;
+      border-radius: 7px;
+      text-align: center;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      display: none;
+      &.active {
+        display: flex;
+        position: absolute;
+        top: 60vh;
+      }
+    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .container {
+      height: 100vh;
+      width: 100%;
+      // ? l'élément principale la div fusée le parent
+      .fusee {
+        background-color: #fff;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 1s linear;
+        &.active {
+          opacity: 1;
+        }
+        &.decollage {
+          animation: launch 3s linear 0.5s forwards;
+          @keyframes launch {
+            0% {
+              transform: translate(2%, -3%);
+            }
+            20% {
+              transform: translate(0%, -4%);
+            }
+            40% {
+              transform: translate(-4%, -6%);
+            }
+            60% {
+              transform: translate(0%, -15%);
+            }
+            80% {
+              transform: translate(0, -80%);
+            }
+            100% {
+              transform: translate(0, -100%);
+            }
+          }
+        }
+        &.atterissage {
+          animation: landing 3s linear forwards;
+          @keyframes landing {
+            from {
+              transform: translate(0, -100%);
+            }
+            to {
+              transform: translate(0, 0);
+            }
+          }
+        }
+        // ! élément de la fusée
+        .haut {
+          opacity: 0;
+          transition: opacity 0.25s linear, visibility 0.25s linear;
+          &.active {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 50px 88px 50px;
+            border-bottom-left-radius: 1px;
+            border-bottom-right-radius: 1px;
+            border-color: transparent transparent #063e7a transparent;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        // ! élément de la fusée
+        .corpsfusee {
+          display: flex;
+          // ! élément de la fusée aile gauche
+          .gauche {
+            opacity: 0;
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+            &.active {
+              align-self: center;
+              width: 0;
+              height: 0;
+              border-top: 40px solid red;
+              border-left: 40px solid transparent;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          // ! élément de la fusée
+          .centre {
+            opacity: 0;
+            transition: opacity 0.1s linear, visibility 0.1s linear;
+            &.active {
+              width: 100px;
+              height: 200px;
+              border-bottom-left-radius: 5px;
+              border-bottom-right-radius: 5px;
+              background: darkblue;
+              opacity: 1;
+              visibility: visible;
+              position: relative;
+              // ! élément de la fusée la fenêtre
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 35%;
+                right: 50%;
+                transform: translate(50%, -65%);
+                height: 50px;
+                width: 30px;
+                border-radius: 50%;
+                border: 5px solid whitesmoke;
+                background: transparent;
+              }
+            }
+          }
+          // ! élément de la fusée aile droite
+          .droit {
+            opacity: 0;
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+            &.active {
+              align-self: center;
+              width: 0;
+              height: 0;
+              border-top: 40px solid red;
+              border-right: 40px solid transparent;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          position: relative;
+        }
+        // ! élément de la fusée
+        .bas {
+          opacity: 0;
+          transition: opacity 0.15s linear, visibility 0.15s linear;
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: 35vh;
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid rgb(190, 3, 3);
+            border-left: 40px solid transparent;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-right: 40px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}

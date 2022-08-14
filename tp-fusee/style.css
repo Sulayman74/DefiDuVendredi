@@ -1,0 +1,267 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body main .astronautes {
+  display: flex;
+  justify-content: space-evenly;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  display: none;
+  transition: all 0.3s linear;
+}
+body main .astronautes.active {
+  position: absolute;
+  top: 40vh;
+  display: flex;
+  -webkit-animation: goUp 2s ease-out forwards;
+          animation: goUp 2s ease-out forwards;
+}
+@-webkit-keyframes goUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60%);
+  }
+}
+@keyframes goUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-60%);
+  }
+}
+body main .astronautes p {
+  font-size: 100px;
+}
+body main .notif-carbu-ok {
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  transition: all 1s linear;
+  height: 10vh;
+  width: 20%;
+  background-color: green;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+}
+body main .notif-carbu-ok.active {
+  position: absolute;
+  top: 10vh;
+  left: 2vw;
+  font-size: 14px;
+  display: flex;
+}
+body main .notif-passagers-ok {
+  display: flex;
+  position: absolute;
+  transition: all 1s linear;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vh;
+  height: 10vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: royalblue;
+  border-radius: 7px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: none;
+}
+body main .notif-passagers-ok.active {
+  display: flex;
+  position: absolute;
+  top: 60vh;
+}
+body main .container {
+  height: 100vh;
+  width: 100%;
+}
+body main .container .fusee {
+  background-color: #fff;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 1s linear;
+}
+body main .container .fusee.active {
+  opacity: 1;
+}
+body main .container .fusee.decollage {
+  -webkit-animation: launch 3s linear 0.5s forwards;
+          animation: launch 3s linear 0.5s forwards;
+}
+@-webkit-keyframes launch {
+  0% {
+    transform: translate(2%, -3%);
+  }
+  20% {
+    transform: translate(0%, -4%);
+  }
+  40% {
+    transform: translate(-4%, -6%);
+  }
+  60% {
+    transform: translate(0%, -15%);
+  }
+  80% {
+    transform: translate(0, -80%);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+@keyframes launch {
+  0% {
+    transform: translate(2%, -3%);
+  }
+  20% {
+    transform: translate(0%, -4%);
+  }
+  40% {
+    transform: translate(-4%, -6%);
+  }
+  60% {
+    transform: translate(0%, -15%);
+  }
+  80% {
+    transform: translate(0, -80%);
+  }
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+body main .container .fusee.atterissage {
+  -webkit-animation: landing 3s linear forwards;
+          animation: landing 3s linear forwards;
+}
+@-webkit-keyframes landing {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes landing {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+body main .container .fusee .haut {
+  opacity: 0;
+  transition: opacity 0.25s linear, visibility 0.25s linear;
+}
+body main .container .fusee .haut.active {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 88px 50px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-color: transparent transparent #063e7a transparent;
+  opacity: 1;
+  visibility: visible;
+}
+body main .container .fusee .corpsfusee {
+  display: flex;
+  position: relative;
+}
+body main .container .fusee .corpsfusee .gauche {
+  opacity: 0;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+body main .container .fusee .corpsfusee .gauche.active {
+  align-self: center;
+  width: 0;
+  height: 0;
+  border-top: 40px solid red;
+  border-left: 40px solid transparent;
+  opacity: 1;
+  visibility: visible;
+}
+body main .container .fusee .corpsfusee .centre {
+  opacity: 0;
+  transition: opacity 0.1s linear, visibility 0.1s linear;
+}
+body main .container .fusee .corpsfusee .centre.active {
+  width: 100px;
+  height: 200px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: darkblue;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+body main .container .fusee .corpsfusee .centre.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 35%;
+  right: 50%;
+  transform: translate(50%, -65%);
+  height: 50px;
+  width: 30px;
+  border-radius: 50%;
+  border: 5px solid whitesmoke;
+  background: transparent;
+}
+body main .container .fusee .corpsfusee .droit {
+  opacity: 0;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+body main .container .fusee .corpsfusee .droit.active {
+  align-self: center;
+  width: 0;
+  height: 0;
+  border-top: 40px solid red;
+  border-right: 40px solid transparent;
+  opacity: 1;
+  visibility: visible;
+}
+body main .container .fusee .bas {
+  opacity: 0;
+  transition: opacity 0.15s linear, visibility 0.15s linear;
+}
+body main .container .fusee .bas.active {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  top: 35vh;
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid rgb(190, 3, 3);
+  border-left: 40px solid transparent;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 40px solid transparent;
+}/*# sourceMappingURL=style.css.map */

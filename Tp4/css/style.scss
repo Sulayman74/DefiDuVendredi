@@ -1,0 +1,154 @@
+// font-family: 'Lobster Two', cursive;
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,400&display=swap");
+main {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  margin: 0;
+  background-color: coral;
+  height: 100vh;
+  width: 100%;
+}
+
+.BigContainer {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  height: 70vh;
+  width: 25%;
+}
+
+#Coeur {
+  display: none;
+}
+
+#Coeur:checked + label i {
+  color: red;
+  font-weight: 900;
+  //   overflow: hidden;
+  //   background: linear-gradient(#e66465, #9198e5);
+  
+}
+.EmplacementIcons {
+  .Icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+  }
+}
+
+.EmplacementIcons {
+  .Icons div:nth-child(1) {
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+
+.EmplacementIcons {
+  .Icons label > i {
+    font-size: 18px;
+    // font-weight:bold;
+    background-color: whitesmoke;
+    cursor: pointer;
+  }
+}
+
+.ApercuPlat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  height: 24%;
+  h1 {
+    font-family: "Lobster Two", cursive;
+    padding: 10px;
+    font-size: 20px;
+    width: 50%;
+  }
+}
+label {
+  img {
+    cursor: pointer;
+    transition: all 0.4s linear;
+  }
+}
+
+#Plat {
+  display: none;
+}
+
+#Plat:checked{ 
+  ~ .ApercuPlat
+  .Image
+   label
+    img{ 
+
+      transform: scale(2.5) translate(20px, 50px);
+      position: absolute;
+      z-index: 1;
+    } 
+~.Ingredients {
+  opacity: 0;
+}
+}
+
+
+.Ingredients {
+  ul
+  li {
+    list-style: none;
+
+  }
+  span {
+    padding: 5px 20px;
+    
+  }
+}
+
+
+
+// #Plat:checked ~ .Ingredients {
+//   opacity: 0;
+// }
+
+// .Ingredients {
+//   display: flex;
+//   flex-direction: column;
+//   transition: all .4s ease;
+//   .Ingrdt1,
+//   .Ingrdt2,
+//   .Ingrdt3,
+//   .Ingrdt4,
+//   .Ingrdt5,
+//   .Ingrdt6,
+//   .Ingrdt7 {
+//     padding: 0 0 0 40px;
+//     display: flex;
+//     font-size: 20px;
+//   }
+//   .Ingrdt1 p:nth-child(1),
+//   .Ingrdt2 p:nth-child(1),
+//   .Ingrdt3 p:nth-child(1),
+//   .Ingrdt4 p:nth-child(1),
+//   .Ingrdt5 p:nth-child(1),
+//   .Ingrdt6 p:nth-child(1),
+//   .Ingrdt7 p:nth-child(1) {
+//     font-family: "Lobster Two", cursive;
+//     font-style: italic;
+//     font-weight: 700;
+//   }
+//   .Ingrdt1 p:nth-child(2),
+//   .Ingrdt2 p:nth-child(2),
+//   .Ingrdt3 p:nth-child(2),
+//   .Ingrdt4 p:nth-child(2),
+//   .Ingrdt5 p:nth-child(2),
+//   .Ingrdt6 p:nth-child(2),
+//   .Ingrdt7 p:nth-child(2) {
+//     font-family: "Roboto";
+//     font-weight:300;
+    
+//   }
+//   p {
+//     margin-right: 5px;
+    
+//   }

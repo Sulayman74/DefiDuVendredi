@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,400&display=swap");
+main {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0 0;
+  margin: 0;
+  background-color: coral;
+  height: 100vh;
+  width: 100%;
+}
+
+.BigContainer {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  height: 70vh;
+  width: 25%;
+}
+
+#Coeur {
+  display: none;
+}
+
+#Coeur:checked + label i {
+  color: red;
+  font-weight: 900;
+}
+
+.EmplacementIcons .Icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.EmplacementIcons .Icons div:nth-child(1) {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.EmplacementIcons .Icons label > i {
+  font-size: 18px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.ApercuPlat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  height: 24%;
+}
+.ApercuPlat h1 {
+  font-family: "Lobster Two", cursive;
+  padding: 10px;
+  font-size: 20px;
+  width: 50%;
+}
+
+label img {
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+
+#Plat {
+  display: none;
+}
+
+#Plat:checked ~ .ApercuPlat .Image label img {
+  transform: scale(2.5) translate(20px, 50px);
+  position: absolute;
+  z-index: 1;
+}
+#Plat:checked ~ .Ingredients {
+  opacity: 0;
+}
+
+.Ingredients ul li {
+  list-style: none;
+}
+.Ingredients span {
+  padding: 5px 20px;
+}/*# sourceMappingURL=style.css.map */

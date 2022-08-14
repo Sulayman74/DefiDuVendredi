@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+
+body {
+    background: coral;
+}
+
+.card {
+    max-width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius:25px ;
+    position: relative;
+    .card_head {
+        display: flex;
+        justify-content: space-between;
+        label {
+            cursor:pointer;
+            i:nth-child(2){
+                display: none;
+            }
+            #coeur:checked ~ .fa-thin {
+                display: none;
+            }
+            #coeur:checked ~ .fa-solid {
+                display: inline-block;
+            }
+            input { 
+                display: none;
+            }
+        }
+    }
+    .card_title {
+        padding:20px;
+        img {
+            width:90px;
+            position: absolute;
+            top:90px;
+            left:40px;
+            transition: all .4s;
+        }
+        h2 {
+            width: 100px;
+            margin-left: 80px;
+            transition: all .4s;
+            font-family: 'Lobster Two', cursive;
+        }
+        
+    }
+    .card_body {
+        transition: all .2s;
+
+        li {
+            list-style: none;
+            span {
+                width: 50px;
+                display: inline-block;
+                text-align: center;
+                font-family: 'Lobster Two', cursive;
+            }
+        }
+    }
+    #image_plat {
+        display: none;
+    }
+    #image_plat:checked {
+        ~ .card_title {
+            img {z-index: 1;
+                top:250px;
+                left:50%;
+                transform: scale(2) translateX(-25%);
+            }
+            h2 {
+                margin-left: 0px;
+                transform: scale(1.2);
+            }
+        }
+        ~ .card_body {
+            opacity:0;
+            li {
+                opacity: 0;
+            }
+        }
+    }
+    #image_plat:not(:checked) {
+        ~ .card_body {
+            @for $i from 1 through 6 {
+                li:nth-child(#{7 - $i}) {
+                 transition-delay: 0.2s * $i;
+                }
+            }
+        }
+        
+    }
+}

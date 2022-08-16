@@ -10,14 +10,147 @@
   </head>
 
   <body>
-    <header></header>
-
     <main>
+      <section class="interrupteurs">
+        <button class="bouton" id="btn1" onclick="fusee.construireFusee();">
+          create a spaceship
+        </button>
+        <button class="bouton" id="btn2" onclick="fusee.remplirReservoir();">
+          fill the tank
+        </button>
+        <button
+          class="bouton"
+          id="btn3"
+          onclick="fusee.ajouterPassager(fusee.passagers);"
+        >
+          passagers on boarding
+        </button>
+        <button class="bouton" id="btn4" onclick="fusee.decolage();">
+          launch the ship
+        </button>
+        <button class="bouton" id="btn5" onclick="fusee.atterissage();">
+          land the ship
+        </button>
+      </section>
+      <section class="sky">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+      </section>
       <div class="notif-carbu-ok"></div>
       <div class="notif-passagers-ok"></div>
       <div class="astronautes">
         <p class="first"></p>
       </div>
+
+      <table class="montableau">
+        <thead>
+          <tr>
+            <th>Astronautes</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="nom"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="nom1"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="nom2"></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td class="nom3"></td>
+          </tr>
+        </tbody>
+      </table>
+
       <div class="container">
         <div class="fusee">
           <div class="haut"></div>
@@ -30,7 +163,7 @@
         </div>
       </div>
     </main>
-
-    <script src="fusee.js"></script>
+    <script src="app.js"></script>
+    <!-- <script src="fusee.js"></script> -->
   </body>
 </html>

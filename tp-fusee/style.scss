@@ -2,8 +2,102 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: burlywood;
+  overflow-x: hidden;
 
   main {
+    position: relative;
+    .interrupteurs {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      justify-content: space-evenly;
+      top: 2vh;
+      // background: blue;
+      width: 100%;
+      .bouton {
+        &:nth-child(even) {
+          background-color: beige;
+        }
+        cursor: pointer;
+        padding: 5px 10px;
+        margin: 5px;
+        height: 5vh;
+        width: fit-content;
+        background-color: palegoldenrod;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-shadow: 2px 1px 2px wheat;
+        transition: all 0.3s linear;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-transform: capitalize;
+        &:hover {
+          transform: scale(1.06);
+          background-color: transparent;
+          color: white;
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+          border: 1px solid red;
+          box-shadow: 2px 1px 2px crimson;
+        }
+      }
+    }
+    .sky {
+      display: none;
+      background: #000;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      .stars {
+        position: relative;
+        background-color: goldenrod;
+      }
+      &.active {
+        display: flex;
+      }
+    }
+    @for $i from 1 through 200 {
+      .stars:nth-of-type(#{$i}) {
+        top: random($limit: 105) + vh;
+        left: random($limit: 110) + vw;
+        width: random($limit: 2) + px;
+        height: random($limit: 3) + px;
+        opacity: random($limit: 1) + 0.5;
+      }
+    }
+
+    .montableau {
+      position: absolute;
+      top: 30%;
+      right: 0;
+      margin-right: 20px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+    }
+
     // * création des classes pour le javascript class : "active" quand ces classes sont appelées le CSS fait apparaître les éléments voulus.
     // ! ici les astronautes
     .astronautes {
@@ -18,9 +112,9 @@ body {
       transition: all 0.3s linear;
       &.active {
         position: absolute;
-        top: 40vh;
+        top: 55vh;
         display: flex;
-        animation: goUp 2s ease-out forwards;
+        animation: goUp 2s ease-out 0.5s forwards;
         @keyframes goUp {
           from {
             transform: translateY(0);
@@ -36,38 +130,31 @@ body {
     }
     // ! ici la notification du carburant
     .notif-carbu-ok {
-      padding: 20px;
-      display: flex;
-      justify-content: end;
-      align-items: center;
       position: absolute;
-      transition: all 1s linear;
+      padding: 8px 6px;
+      display: none;
+      top: 20%;
+      left: 10%;
+      transition: all 1.5s linear;
       height: 10vh;
       width: 20%;
       background-color: green;
-      border-radius: 10px;
-      display: none;
+      border-radius: 5px;
       text-align: center;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
       text-transform: uppercase;
       &.active {
-        position: absolute;
-        top: 10vh;
-        left: 2vw;
-        font-size: 14px;
         display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
     // ! ici la notification des passagers
     .notif-passagers-ok {
-      display: flex;
       position: absolute;
-      transition: all 1s linear;
+      transition: all 1.5s linear;
       padding: 10px;
-      justify-content: center;
-      align-items: center;
-      margin-top: 7vh;
       height: 10vh;
       width: fit-content;
       background-color: royalblue;
@@ -78,8 +165,8 @@ body {
       display: none;
       &.active {
         display: flex;
-        position: absolute;
-        top: 60vh;
+        top: 70vh;
+        left: 10%;
       }
     }
     display: flex;
@@ -90,8 +177,8 @@ body {
       width: 100%;
       // ? l'élément principale la div fusée le parent
       .fusee {
-        background-color: #fff;
-        height: 50vh;
+        background: transparent;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -221,7 +308,7 @@ body {
             opacity: 1;
             visibility: visible;
             position: absolute;
-            top: 35vh;
+            top: 60vh;
             width: 0;
             height: 0;
             border-bottom: 80px solid rgb(190, 3, 3);
